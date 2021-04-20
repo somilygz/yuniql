@@ -20,7 +20,7 @@ steps:
 - task: RunYuniqlCLI@1
   inputs:
       version: 'latest'
-      connectionString: 'Server=cu1-dwh-uat-pns-001.postgres.database.azure.com;Database={your_database};Port=5432;User Id=Sqladmindwh@cu1-dwh-uat-pns-001;Password=1@2d3w4H5UAT;Ssl Mode=Require;'
+      connectionString: 'Server=cu1-dwh-uat-pns-001.postgres.database.azure.com;Database=dwh_control;Port=5432;User Id=Sqladmindwh@cu1-dwh-uat-pns-001;Password=1@2d3w4H5UAT;Ssl Mode=Require;'
       workspacePath: '$(Build.SourcesDirectory)\yuniql\samples\basic-postgresql-sample'
       targetPlatform: 'postgresql'
       additionalArguments: '--debug'
