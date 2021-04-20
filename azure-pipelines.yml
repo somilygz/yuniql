@@ -10,11 +10,6 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script:
-
 - task: CmdLine@2
   inputs:
     script: 'git clone https://github.com/somilygz/yuniql $(Build.SourcesDirectory)\yuniql'
@@ -22,8 +17,8 @@ steps:
   inputs:
     version: 'v1.1.55'
     
-  - task: RunYuniqlCLI@1
-    inputs:
+- task: RunYuniqlCLI@1
+  inputs:
       version: 'latest'
       connectionString: 'Server=cu1-dwh-uat-hyp-001-c.postgres.database.azure.com;Database=citus;Port=5432;User Id=citus;Password=1@2d3w4H5QA;Ssl Mode=Require;'
       workspacePath: '$(Build.SourcesDirectory)\yuniql\samples\basic-postgresql-sample'
